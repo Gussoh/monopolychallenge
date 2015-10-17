@@ -3,5 +3,13 @@ package org.digit.monopolychallenge;
 /**
  * Created by gussoh on 17/10/15.
  */
-public class Tile {
+public abstract class Tile {
+
+    public void buy() throws IllegalActionException {
+
+    }
+
+    public void getName() {
+
+    }
 }
