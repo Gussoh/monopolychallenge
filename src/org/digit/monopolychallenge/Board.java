@@ -14,6 +14,10 @@ public class Board {
 		this.game = game;
 	}
 	
+	protected void setTiles(List<Tile> tiles) {
+		this.tiles = tiles;
+	}
+	
 	public List<Tile> getTiles(){
 		return this.tiles;
 	}

@@ -22,7 +22,7 @@ public class BoardLoader {
 		
 		sc.close();
 		
-		return tiles.size() == 0 ? null : new Board(tiles);
+		return tiles.size() == 0 ? null : board;
 		
 	}
 	
