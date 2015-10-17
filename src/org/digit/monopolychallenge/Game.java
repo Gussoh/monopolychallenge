@@ -29,7 +29,7 @@ public class Game {
 
                     // calculate if the player have to pay to another player
                     if (currentTile instanceof PropertyTile) {
-                        Player tileOwner = currentTile.getOwner();
+                        Player tileOwner = ((PropertyTile) currentTile).getOwner();
                         if (tileOwner != null && tileOwner != p) { // make money transaction
                             tileOwner.setMoney(tileOwner.getMoney() + ((PropertyTile) currentTile).getRent());
                             p.setMoney(p.getMoney() - ((PropertyTile) currentTile).getRent());
