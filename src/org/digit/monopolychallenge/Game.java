@@ -28,6 +28,7 @@ public class Game {
                     int newPosition = p.getPosition() + rollDice();
                     if (newPosition > board.getTiles().size()) {
                         // user passed GO! - give money!
+                        p.setMoney(p.getMoney() + 100);
                         newPosition %= board.getTiles().size();
                     }
                     p.setPosition(newPosition);
