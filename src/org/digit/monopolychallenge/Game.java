@@ -11,6 +11,11 @@ public class Game {
     private List<Player> players;
     private Player currentPlayer;
 
+    public Game(List<Player> players) {
+        this.players = players;
+        
+    }
+
     protected void play() {
         boolean gameEnded = false;
 
