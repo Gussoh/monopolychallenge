@@ -1,5 +1,7 @@
 package org.digit.monopolychallenge;
 
+import java.util.Arrays;
+
 /**
  * Created by gussoh on 17/10/15.
  */
@@ -46,6 +48,8 @@ public class PropertyTile extends Tile {
         }
         setOwner(currentPlayer);
         currentPlayer.setMoney(currentPlayer.getMoney() - getPrice());
+
+        System.out.println(currentPlayer + " bought " + this);
     }
 
     public Player getOwner() {
@@ -54,5 +58,17 @@ public class PropertyTile extends Tile {
 
     protected void setOwner(Player owner) {
         this.owner = owner;
+    }
+
+    @Override
+    public String toString() {
+        return "PropertyTile{" +
+                "group='" + group + '\'' +
+                ", name='" + name + '\'' +
+                ", houseLevel=" + houseLevel +
+                ", propertyPrice=" + propertyPrice +
+                ", houseRents=" + Arrays.toString(houseRents) +
+                ", owner=" + owner +
+                '}';
     }
 }

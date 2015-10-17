@@ -1,4 +1,6 @@
-package org.digit.monopolychallenge;
+package org.digit.monopolychallenge.players;
+
+import org.digit.monopolychallenge.*;
 
 import java.util.Scanner;
 
@@ -6,8 +8,9 @@ import java.util.Scanner;
  * Created by gussoh on 18/10/15.
  */
 public class TerminalPlayer extends Player {
+
     @Override
-    void yourTurn(Game game, Board board, Tile tile) {
+    public void yourTurn(Game game, Board board, Tile tile) {
         System.out.println("It is your turn.");
         System.out.println("Board: " + board + ", tile: " + tile);
 

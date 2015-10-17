@@ -9,7 +9,7 @@ public abstract class Player {
     private String name;
     private int position;
 
-    abstract void yourTurn(Game game, Board board, Tile tile);
+    public abstract void yourTurn(Game game, Board board, Tile tile);
 
     public boolean isAlive() {
         return money >= 0;
