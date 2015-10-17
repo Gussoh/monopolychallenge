@@ -12,11 +12,26 @@ public class Game {
 
     protected void play() {
         boolean gameEnded = false;
-        for (Player p : players) {
-            int playersAlive = 0;
-            if (p.isAlive()) {
-                p.setPosition((p.getPosition() + rollDice()) % board.getTiles().size());
-                p.youTurn(this, board, board.getTiles().get(p.getPosition()));
+        while (!gameEnded) {
+            for (Player p : players) {
+                int playersAlive = 0;
+                if (p.isAlive()) {
+                    playersAlive++;
+                    int newPosition = p.getPosition() + rollDice();
+                    if (newPosition > board.getTiles().size()) {
+                        // user passed GO! - give money!
+                        newPosition %= board.getTiles().size();
+                    }
+                    p.setPosition(newPosition);
+                    // check if player went past start and give money if so.
+                    Tile currentTile = board.getTiles().get(p.getPosition());
+                    // calculate if the player have to pay to another player
+
+                    p.youTurn(this, board, currentTile);
+                }
+                if (playersAlive < 2) {
+                    gameEnded = true;
+                }
             }
         }
     }

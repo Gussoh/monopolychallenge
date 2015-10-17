@@ -9,6 +9,7 @@ public class PropertyTile extends Tile {
     private String name;
     private int rent;
     private int price;
+    private int houseLevel; // 0-5 0=no house, 5=hotel
     
     protected PropertyTile(String group, String name, int rent, int price){
     	super(name);
