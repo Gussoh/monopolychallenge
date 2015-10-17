@@ -5,12 +5,36 @@ package org.digit.monopolychallenge;
  */
 public class PropertyTile extends Tile {
 
-    String group;
-    String name;
-    int rent;
-    int price;
+    private String group;
+    private String name;
+    private int rent;
+    private int price;
+    
+    protected PropertyTile(String group, String name, int rent, int price){
+    	super(name);
+    	this.group = group;
+    	this.name = name;
+    	this.rent = rent;
+    	this.price = price;
+    }
 
-    public void buy() throws IllegalActionException {
+    public String getGroup() {
+		return group;
+	}
 
+	public String getName() {
+		return name;
+	}
+
+	public int getRent() {
+		return rent;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+	
+	public void buy() throws IllegalActionException {
+		// TODO
     }
 }

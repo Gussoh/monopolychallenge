@@ -16,29 +16,33 @@ public class BoardLoader {
 			if(sc.next().equals("Property")){
 				parseProperty();
 			}
-			String group;
-			String name;
-			int rent;
-			int price;
-			if(!sc.hasNext()){
-				return null;
-			}
-			group = sc.next();
-			if(!sc.hasNext()){
-				return null;
-			}
-			name = sc.next();
-			if(!sc.hasNextInt()){
-				return null;
-			}
-			price = sc.nextInt();
-			if(!sc.hasNextInt()){
-				return null;
-			}
-			rent = sc.nextInt();
-			return 
+			 
 		}
 		
+	}
+	
+	public PropertyTile parseProperty(Scanner sc){
+		String group;
+		String name;
+		int rent;
+		int price;
+		if(!sc.hasNext()){
+			return null;
+		}
+		group = sc.next();
+		if(!sc.hasNext()){
+			return null;
+		}
+		name = sc.next();
+		if(!sc.hasNextInt()){
+			return null;
+		}
+		price = sc.nextInt();
+		if(!sc.hasNextInt()){
+			return null;
+		}
+		rent = sc.nextInt();
+		return new PropertyTile();
 	}
 	
 }

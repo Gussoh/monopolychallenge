@@ -9,7 +9,7 @@ public class Board {
 	
 	private List<Tile> tiles;
 	
-	public Board(List<Tile> tiles){
+	protected Board(List<Tile> tiles){
 		this.tiles = tiles;
 	}
 	
