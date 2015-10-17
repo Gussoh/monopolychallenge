@@ -1,25 +1,25 @@
 // This is a comment
-// Syntax for a tile: Group Name Price Rent
+// Syntax for a tile: Type Group Name PropertyPrice HousePrice Rents
 
-Property	Group0	Mediterranean Avenue	Old Kent Road	60	10	30	90	160	250
-Property	Group0	Baltic Avenue	Whitechapel Road	60	20	60	180	320	450
-Property	Group0	Oriental Avenue	The Angel Islington	100	30	90	270	400	550
-Property	Group0	Vermont Avenue	Euston Road	100	30	90	270	400	550
-Property	Group0	Connecticut Avenue	Pentonville Road	120	40	100	300	450	600
-Property	Group0	St. Charles Place	Pall Mall	140	50	150	450	625	750
-Property	Group0	States Avenue	Whitehall	140	50	150	450	625	750
-Property	Group0	Virginia Avenue	Northumberland Avenue	160	60	180	500	700	900
-Property	Group0	St. James Place	Bow Street	180	70	200	550	750	950
-Property	Group0	Tennessee Avenue	Marlborough Street	180	70	200	550	750	950
-Property	Group0	New York Avenue	Vine Street	200	80	220	600	800	100	
-Property	Group0	Kentucky Avenue	The Strand	220	90	250	700	875	105	
-Property	Group0	Indiana Avenue	Fleet Street	220	90	250	700	875	105	
-Property	Group0	Illinois Avenue	Trafalgar Square	240	100	300	750	925	110	
-Property	Group0	Atlantic Avenue	Leicester Square	260	110	330	800	975	115	
-Property	Group0	Ventnor Avenue	Coventry Street	260	110	330	800	975	115	
-Property	Group0	Marvin Gardens	Piccadilly	280	140	120	360	850	1025	120	
-Property	Group0	Pacific Avenue	Regent Street	300	130	390	900	1100	127	
-Property	Group0	North Carolina Avenue	Oxford Street	130	390	900	1100	127	
-Property	Group0	Pennsylvania Avenue	Bond Street	320	150	450	1000	1200	140	
-Property	Group0	Park Place	Park Lane	350	175	500	1100	1300	150	
-Property	Group0	Boardwalk	Mayfair	400	200	600	1400	1700	2000
+Property	Group0	Mediterranean Avenue Old Kent Road	60	50	10	30	90	160	250
+Property	Group0	Baltic Avenue Whitechapel Road	60	50	20	60	180	320	450
+Property	Group0	Oriental Avenue The Angel Islington	100	50	30	90	270	400	550
+Property	Group0	Vermont Avenue Euston Road	100	50	30	90	270	400	550
+Property	Group0	Connecticut Avenue Pentonville Road	120	50	40	100	300	450	600
+Property	Group0	St. Charles Place Pall Mall	140	100 50	150	450	625	750
+Property	Group0	States Avenue Whitehall	140	100 50	150	450	625	750
+Property	Group0	Virginia Avenue Northumberland Avenue	160	100 60	180	500	700	900
+Property	Group0	St. James Place Bow Street	180	100 70	200	550	750	950
+Property	Group0	Tennessee Avenue Marlborough Street	180	100 70	200	550	750	950
+Property	Group0	New York Avenue Vine Street	200	100 80	220	600	800	100	
+Property	Group0	Kentucky Avenue The Strand	220	150 90	250	700	875	105	
+Property	Group0	Indiana Avenue Fleet Street	220	150 90	250	700	875	105	
+Property	Group0	Illinois Avenue Trafalgar Square	240	150 100	300	750	925	110	
+Property	Group0	Atlantic Avenue Leicester Square	260	150 110	330	800	975	115	
+Property	Group0	Ventnor Avenue Coventry Street	260	150 110	330	800	975	115	
+Property	Group0	Marvin Gardens Piccadilly	280	140	150 120	360	850	1025	120	
+Property	Group0	Pacific Avenue Regent Street	300	200 130	390	900	1100	127	
+Property	Group0	North Carolina Avenue Oxford Street	200 130	390	900	1100	127	
+Property	Group0	Pennsylvania Avenue Bond Street	320	200 150	450	1000	1200	140	
+Property	Group0	Park Place Park Lane	350	200 175	500	1100	1300	150	
+Property	Group0	Boardwalk Mayfair	400	200 200	600	1400	1700	2000

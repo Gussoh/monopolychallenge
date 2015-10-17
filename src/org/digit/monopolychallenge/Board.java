@@ -7,11 +7,11 @@ import java.util.List;
  */
 public class Board {
 
-    Game game;
+    private Game game;
 	private List<Tile> tiles;
 	
-	protected Board(List<Tile> tiles){
-		this.tiles = tiles;
+	protected Board(Game game){
+		this.game = game;
 	}
 	
 	public List<Tile> getTiles(){

@@ -6,35 +6,41 @@ import java.util.Scanner;
 
 public class BoardLoader {
 
-	public static Board load(String fileName){
+	public static Board load(Game game, String fileName){
 		
 		Scanner sc = new Scanner(fileName);
 		
 		List<Tile> tiles = new ArrayList<Tile>(); 
 		
+		Board board = new Board(game);
+		
 		while(sc.hasNextLine()){
 			if(sc.next().equals("Property")){
-				tiles.add(parseProperty(sc.nextLine()));
+				tiles.add(parseProperty(board, sc.nextLine()));
 			}
 		}
+		
+		sc.close();
 		
 		return tiles.size() == 0 ? null : new Board(tiles);
 		
 	}
 	
-	public static PropertyTile parseProperty(String line){
+	public static PropertyTile parseProperty(Board board, String line){
 		String[] splitted = line.split("\t");
 		if(splitted.length != 8){
 			return null;
 		}
+		// TODO catch numberformatexception
 		String group = splitted[0];
 		String name = splitted[1];
 		int propertyPrice = Integer.parseInt(splitted[2]);
-		int[] housePrices = new int[5];
+		int housePrice = Integer.parseInt(splitted[3]);
+		int[] houseRents = new int[5];
 		for(int i = 0; i < 5; i++){
-			housePrices[i] = Integer.parseInt(splitted[3+i]);
+			houseRents[i] = Integer.parseInt(splitted[4+i]);
 		}
-		return new PropertyTile(group, name, propertyPrice, housePrices);
+		return new PropertyTile(board, group, name, propertyPrice, housePrice, houseRents);
 	}
 	
 }
