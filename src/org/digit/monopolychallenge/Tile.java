@@ -5,9 +5,7 @@ package org.digit.monopolychallenge;
  */
 public abstract class Tile {
 
-    public void buy() throws IllegalActionException {
 
-    }
 
     public void getName() {
 
