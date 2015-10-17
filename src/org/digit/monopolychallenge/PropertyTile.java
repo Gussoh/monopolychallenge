@@ -36,6 +36,7 @@ public class PropertyTile extends Tile {
 	}
 	
 	public void buy() throws IllegalActionException {
+
 		// TODO
     }
 }

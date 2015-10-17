@@ -27,7 +27,20 @@ public abstract class Player {
         return money;
     }
 
+    protected void setMoney(int money) {
+        this.money = money;
+    }
+
     protected void setPosition(int position) {
         this.position = position;
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "money=" + money +
+                ", name='" + name + '\'' +
+                ", position=" + position +
+                '}';
     }
 }
