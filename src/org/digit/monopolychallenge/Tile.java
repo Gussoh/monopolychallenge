@@ -5,13 +5,19 @@ package org.digit.monopolychallenge;
  */
 public abstract class Tile {
 
+    private Board board;
 	private String name;
 
-	protected Tile(String name){
+	protected Tile(Board board, String name) {
+        this.board = board;
 		this.name = name;
 	}
 
     public String getName(){
     	return this.name;
+    }
+
+    public Board getBoard() {
+        return board;
     }
 }
