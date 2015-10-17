@@ -10,9 +10,8 @@ public abstract class Tile {
 	protected Tile(String name){
 		this.name = name;
 	}
-	
+
     public String getName(){
     	return this.name;
     }
-
 }

@@ -10,6 +10,7 @@ public class PropertyTile extends Tile {
     private int houseLevel; // 0-5 0=no house, 5=hotel
     private int propertyPrice;
     private int[] houseRents;
+    private Player owner;
     
     protected PropertyTile(String group, String name, int propertyPrice, int[] houseRents){
     	super(name);
@@ -38,5 +39,13 @@ public class PropertyTile extends Tile {
 	public void buy() throws IllegalActionException {
 
 		// TODO
+    }
+
+    public Player getOwner() {
+        return owner;
+    }
+
+    protected void setOwner(Player owner) {
+        this.owner = owner;
     }
 }
