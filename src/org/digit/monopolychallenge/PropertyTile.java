@@ -37,7 +37,15 @@ public class PropertyTile extends Tile {
 	}
 	
 	public void buy() throws IllegalActionException {
-        //getBoard().getGame().
+        Player currentPlayer = getBoard().getGame().getCurrentPlayer();
+        if (getOwner() != null) {
+            throw new IllegalActionException("Property is already owned by " + getOwner());
+        }
+        if (currentPlayer.getMoney() < getPrice()) {
+            throw new IllegalActionException("Not enough money to buy property");
+        }
+        setOwner(currentPlayer);
+        currentPlayer.setMoney(currentPlayer.getMoney() - getPrice());
     }
 
     public Player getOwner() {
