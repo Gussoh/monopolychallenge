@@ -5,9 +5,13 @@ package org.digit.monopolychallenge;
  */
 public abstract class Player {
 
-    private int money;
+    private int money = 200;
     private String name;
     private int position;
+
+    public Player(String name) {
+        this.name = name;
+    }
 
     public abstract void yourTurn(Game game, Board board, Tile tile);
 

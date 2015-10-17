@@ -9,6 +9,10 @@ import java.util.Scanner;
  */
 public class TerminalPlayer extends Player {
 
+    public TerminalPlayer() {
+        super("Terminal player");
+    }
+
     @Override
     public void yourTurn(Game game, Board board, Tile tile) {
         System.out.println("It is your turn.");

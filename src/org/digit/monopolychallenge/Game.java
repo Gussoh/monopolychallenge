@@ -13,7 +13,7 @@ public class Game {
 
     public Game(List<Player> players) {
         this.players = players;
-        
+
     }
 
     protected void play() {
