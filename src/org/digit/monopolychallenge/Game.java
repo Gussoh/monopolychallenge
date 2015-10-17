@@ -36,7 +36,7 @@ public class Game {
                             tileOwner.setMoney(tileOwner.getMoney() + ((PropertyTile) currentTile).getRent());
                             p.setMoney(p.getMoney() - ((PropertyTile) currentTile).getRent());
                         }
-                        p.youTurn(this, board, currentTile);
+                        p.yourTurn(this, board, currentTile);
                     }
                 }
                 if (playersAlive < 2) {
