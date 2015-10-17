@@ -12,8 +12,8 @@ public class PropertyTile extends Tile {
     private int[] houseRents;
     private Player owner;
     
-    protected PropertyTile(String group, String name, int propertyPrice, int[] houseRents){
-    	super(name);
+    protected PropertyTile(Board board, String group, String name, int propertyPrice, int[] houseRents){
+    	super(board, name);
     	this.group = group;
     	this.name = name;
     	this.propertyPrice = propertyPrice;
