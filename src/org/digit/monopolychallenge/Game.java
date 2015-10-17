@@ -7,14 +7,16 @@ import java.util.List;
  */
 public class Game {
 
-    Board board;
-    List<Player> players;
+    private Board board;
+    private List<Player> players;
+    private Player currentPlayer;
 
     protected void play() {
         boolean gameEnded = false;
 
         while (!gameEnded) {
             for (Player p : players) {
+                currentPlayer = p;
                 int playersAlive = 0;
                 if (p.isAlive()) {
                     playersAlive++;
@@ -55,4 +57,7 @@ public class Game {
         return (int) (Math.random() * 6 + 1) + (int) (Math.random() * 6 + 1);
     }
 
+    public Player getCurrentPlayer() {
+        return currentPlayer;
+    }
 }

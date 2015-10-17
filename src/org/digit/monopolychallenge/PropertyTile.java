@@ -37,8 +37,7 @@ public class PropertyTile extends Tile {
 	}
 	
 	public void buy() throws IllegalActionException {
-
-		// TODO
+        //getBoard().getGame().
     }
 
     public Player getOwner() {
