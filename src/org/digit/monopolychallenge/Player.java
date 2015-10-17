@@ -3,7 +3,11 @@ package org.digit.monopolychallenge;
 /**
  * Created by gussoh on 17/10/15.
  */
-public interface Player {
+public abstract class Player {
 
-   void youTurn(Board board, Tile tile);
+    int money;
+    String name;
+    int position;
+
+   abstract void youTurn(Board board, Tile tile);
 }
