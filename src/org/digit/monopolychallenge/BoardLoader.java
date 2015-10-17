@@ -14,35 +14,27 @@ public class BoardLoader {
 		
 		while(sc.hasNextLine()){
 			if(sc.next().equals("Property")){
-				parseProperty();
+				tiles.add(parseProperty(sc.nextLine()));
 			}
-			 
 		}
+		
+		return tiles.size() == 0 ? null : new Board(tiles);
 		
 	}
 	
-	public PropertyTile parseProperty(Scanner sc){
-		String group;
-		String name;
-		int rent;
-		int price;
-		if(!sc.hasNext()){
+	public static PropertyTile parseProperty(String line){
+		String[] splitted = line.split("\t");
+		if(splitted.length != 8){
 			return null;
 		}
-		group = sc.next();
-		if(!sc.hasNext()){
-			return null;
+		String group = splitted[0];
+		String name = splitted[1];
+		int propertyPrice = Integer.parseInt(splitted[2]);
+		int[] housePrices = new int[5];
+		for(int i = 0; i < 5; i++){
+			housePrices[i] = Integer.parseInt(splitted[3+i]);
 		}
-		name = sc.next();
-		if(!sc.hasNextInt()){
-			return null;
-		}
-		price = sc.nextInt();
-		if(!sc.hasNextInt()){
-			return null;
-		}
-		rent = sc.nextInt();
-		return new PropertyTile();
+		return new PropertyTile(group, name, propertyPrice, housePrices);
 	}
 	
 }

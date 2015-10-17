@@ -7,16 +7,16 @@ public class PropertyTile extends Tile {
 
     private String group;
     private String name;
-    private int rent;
-    private int price;
     private int houseLevel; // 0-5 0=no house, 5=hotel
+    private int propertyPrice;
+    private int[] houseRents;
     
-    protected PropertyTile(String group, String name, int rent, int price){
+    protected PropertyTile(String group, String name, int propertyPrice, int[] houseRents){
     	super(name);
     	this.group = group;
     	this.name = name;
-    	this.rent = rent;
-    	this.price = price;
+    	this.propertyPrice = propertyPrice;
+    	this.houseRents = houseRents;
     }
 
     public String getGroup() {
@@ -28,11 +28,11 @@ public class PropertyTile extends Tile {
 	}
 
 	public int getRent() {
-		return rent;
+		return houseRents[houseLevel];
 	}
 
 	public int getPrice() {
-		return price;
+		return propertyPrice;
 	}
 	
 	public void buy() throws IllegalActionException {
