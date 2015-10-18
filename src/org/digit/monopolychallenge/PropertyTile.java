@@ -38,21 +38,22 @@ public class PropertyTile extends Tile {
 	public int getHousePrice(){
 		return housePrice;
 	}
+	
 	protected void buy(Player buyer) throws IllegalActionException {
-		if (getOwner() != null) {
-            throw new IllegalActionException("Property is already owned by " + getOwner());
-        }
-        if (buyer.getMoney() < getPrice()) {
-            throw new IllegalActionException("Not enough money to buy property");
-        }
-        setOwner(buyer);
-        buyer.setMoney(buyer.getMoney() - getPrice());
-
-        System.out.println(buyer + " bought " + this);
+		getBoard().getGame().buy(buyer, this);
 	}
+	
 	public void buy() throws IllegalActionException {
         buy(getBoard().getGame().getCurrentPlayer());
     }
+	
+	protected void sell(Player seller) throws IllegalActionException {
+		getBoard().getGame().sell(seller, this);
+	}
+	
+	public void sell() throws IllegalActionException {
+		 sell(getBoard().getGame().getCurrentPlayer());
+	}
 
     public Player getOwner() {
         return owner;
@@ -64,13 +65,13 @@ public class PropertyTile extends Tile {
 
     @Override
     public String toString() {
-        return "PropertyTile{" +
-                "group='" + group + '\'' +
+    	return "PropertyTile{" +
+    			"owner=" + owner + '\'' +
+                ", group='" + group + '\'' +
                 ", name='" + name + '\'' +
                 ", houseLevel=" + houseLevel +
                 ", propertyPrice=" + propertyPrice +
                 ", houseRents=" + Arrays.toString(houseRents) +
-                ", owner=" + owner +
                 '}';
     }
 }

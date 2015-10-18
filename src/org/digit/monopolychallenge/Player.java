@@ -1,22 +1,27 @@
 package org.digit.monopolychallenge;
 
+import java.util.List;
+
 /**
  * Created by gussoh on 17/10/15.
  */
 public abstract class Player {
 
+	private final Game game;
     private int money = 200;
     private String name;
     private int position;
 
     // Constructs a player from another player
     protected Player(Player other) {
+    	this.game = other.game;
         this.name = other.name;
         this.money = other.money;
         this.position = other.position;
     }
     
-    protected Player(String name) {
+    protected Player(Game game, String name) {
+    	this.game = game;
         this.name = name;
     }
 
@@ -85,5 +90,9 @@ public abstract class Player {
                 ", position=" + position +
                 '}';
     }
+
+	public final List<PropertyTile> getProperties() {
+		return game.getProperties(this);
+	}
 
 }

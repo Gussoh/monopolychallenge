@@ -9,8 +9,8 @@ import java.util.Scanner;
  */
 public class TerminalPlayer extends Player {
 
-    public TerminalPlayer() {
-        super("Terminal player");
+    public TerminalPlayer(Game game) {
+    	super(game, "Terminal player");
     }
 
     @Override

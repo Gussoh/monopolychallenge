@@ -9,13 +9,13 @@ import org.digit.monopolychallenge.Tile;
  * Created by gussoh on 18/10/15.
  */
 public class DumbAIPlayer extends Player {
-    public DumbAIPlayer() {
-        super("Dumb AI Player");
+    public DumbAIPlayer(Game game) {
+        super(game, "Dumb AI Player");
     }
 
     @Override
     public void yourTurn(Game game, Board board, Tile tile) {
-
+		// TODO Auto-generated method stub
     }
 
 	@Override
