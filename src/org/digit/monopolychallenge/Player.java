@@ -9,7 +9,14 @@ public abstract class Player {
     private String name;
     private int position;
 
-    public Player(String name) {
+    // Constructs a player from another player
+    protected Player(Player other) {
+        this.name = other.name;
+        this.money = other.money;
+        this.position = other.position;
+    }
+    
+    protected Player(String name) {
         this.name = name;
     }
 
@@ -78,4 +85,5 @@ public abstract class Player {
                 ", position=" + position +
                 '}';
     }
+
 }

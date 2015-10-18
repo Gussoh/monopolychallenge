@@ -29,8 +29,20 @@ public class TerminalPlayer extends Player {
                     System.out.println(e.getMessage());
                 }
             }
+            s.close();
         }
 
         System.out.println("No other actions impemented. End of turn.");
     }
+
+	@Override
+	public void onBroke(Game game, Board board) {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public int onBidding(Game game, Tile tile, int currentPrice) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

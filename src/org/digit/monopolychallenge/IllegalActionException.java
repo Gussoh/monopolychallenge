@@ -5,7 +5,9 @@ package org.digit.monopolychallenge;
  */
 public class IllegalActionException extends Exception {
 
-    public IllegalActionException() {
+	private static final long serialVersionUID = 7914652506559136585L;
+
+	public IllegalActionException() {
         super();
     }
 

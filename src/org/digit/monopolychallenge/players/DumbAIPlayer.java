@@ -17,4 +17,15 @@ public class DumbAIPlayer extends Player {
     public void yourTurn(Game game, Board board, Tile tile) {
 
     }
+
+	@Override
+	public void onBroke(Game game, Board board) {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public int onBidding(Game game, Tile tile, int currentPrice) {
+		// Always bid one more, even if we don't have the money
+		return currentPrice + 1;
+	}
 }

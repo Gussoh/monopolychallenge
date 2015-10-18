@@ -2,7 +2,6 @@ package org.digit.monopolychallenge;
 
 import org.digit.monopolychallenge.players.DumbAIPlayer;
 import org.digit.monopolychallenge.players.SimpleAIPlayer;
-import org.digit.monopolychallenge.players.TerminalPlayer;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
