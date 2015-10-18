@@ -66,4 +66,13 @@ public class Game {
     public Player getCurrentPlayer() {
         return currentPlayer;
     }
+
+    @Override
+    public String toString() {
+        return "Game{" +
+                "board=" + board +
+                ", players=" + players +
+                ", currentPlayer=" + currentPlayer +
+                '}';
+    }
 }

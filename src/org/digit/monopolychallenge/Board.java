@@ -25,4 +25,11 @@ public class Board {
     public Game getGame() {
         return game;
     }
+
+    @Override
+    public String toString() {
+        return "Board{" +
+                "tiles=" + tiles.size() +
+                '}';
+    }
 }
