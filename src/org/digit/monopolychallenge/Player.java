@@ -13,7 +13,38 @@ public abstract class Player {
         this.name = name;
     }
 
+    /**
+     * You may choose to buy the property, buy houses or sell stuff if you would like.
+     * @param game
+     * @param board
+     * @param tile
+     */
     public abstract void yourTurn(Game game, Board board, Tile tile);
+
+    /**
+     * check how much money you own by looking at your money
+     * @param game
+     * @param board
+     */
+    public abstract void onBroke(Game game, Board board);
+
+    /**
+     *  You are not allowed to do anything but the bidding.
+     *  // TODO: fix this
+     * @param game
+     * @param tile
+     * @param currentPrice
+     * @return your bid, any bid less or equal than the current bid means that you would not like to raise the bid
+     */
+    public abstract int onBidding(Game game, Tile tile, int currentPrice);
+
+    /**
+     * When someone visits your property
+     * @return true if you would like to collect the rent
+     */
+    public boolean onPropertyVisit() {
+        return true;
+    }
 
     public boolean isAlive() {
         return money >= 0;

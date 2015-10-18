@@ -1,5 +1,6 @@
 package org.digit.monopolychallenge;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -25,9 +26,7 @@ public class Game {
                 if (p.isAlive()) {
                     playersAlive++;
                     int newPosition = p.getPosition() + rollDice();
-                    System.out.println("Bap: " + board);
-                    System.out.println("Bap: " + board.getTiles());
-                    if (newPosition > board.getTiles().size()) {
+                    if (newPosition >= board.getTiles().size()) {
                         // user passed GO! - give money!
                         p.setMoney(p.getMoney() + 100);
                         newPosition %= board.getTiles().size();
@@ -42,14 +41,26 @@ public class Game {
                         if (tileOwner != null && tileOwner != p) { // make money transaction
                             tileOwner.setMoney(tileOwner.getMoney() + ((PropertyTile) currentTile).getRent());
                             p.setMoney(p.getMoney() - ((PropertyTile) currentTile).getRent());
+                            System.out.println(currentPlayer + " stepped on " + currentTile + " and had to pay rent.");
                         }
                         p.yourTurn(this, board, currentTile);
                     }
-                }
-                if (playersAlive < 2) {
-                    gameEnded = true;
+
+                    if (!p.isAlive()) { // if the player is dead, remove all owned properties
+                        for (Tile t : board.getTiles()) {
+                            if (t instanceof PropertyTile) {
+                                if (((PropertyTile) t).getOwner() == p) {
+                                    ((PropertyTile) t).setOwner(null);
+                                }
+                            }
+                        }
+                    }
                 }
             }
+            if (playersAlive < 2) {
+                gameEnded = true;
+            }
+            System.out.println("Current players: " + players);
         }
         Player winner = null;
         for (Player p : players) {
