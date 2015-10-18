@@ -1,14 +1,17 @@
 package org.digit.monopolychallenge;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 public class BoardLoader {
 
-	public static Board load(Game game, String fileName){
+	public static Board load(Game game, String fileName) throws FileNotFoundException{
 		
-		Scanner sc = new Scanner(fileName);
+		Scanner sc = new Scanner(new File(fileName));
 		
 		List<Tile> tiles = new ArrayList<Tile>(); 
 		
@@ -20,16 +23,23 @@ public class BoardLoader {
 			}
 		}
 		
+		board.setTiles(tiles);
+		
 		sc.close();
 		
-		return tiles.size() == 0 ? null : board;
+		if(tiles.size() == 0){
+			throw new RuntimeException("Could not load tiles");
+		}
+		
+		return board;
 		
 	}
 	
 	public static PropertyTile parseProperty(Board board, String line){
+		line = line.trim();
 		String[] splitted = line.split("\t");
-		if(splitted.length != 8){
-			return null;
+		if(splitted.length != 9){
+			throw new RuntimeException("Not enough tabs: " + splitted.length+", splitted: "+Arrays.toString(splitted));
 		}
 		// TODO catch numberformatexception
 		String group = splitted[0];

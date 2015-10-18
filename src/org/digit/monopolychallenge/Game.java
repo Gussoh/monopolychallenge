@@ -13,19 +13,20 @@ public class Game {
 
     public Game(List<Player> players) {
         this.players = players;
-
     }
 
     protected void play() {
         boolean gameEnded = false;
 
         while (!gameEnded) {
+        	int playersAlive = 0;
             for (Player p : players) {
                 currentPlayer = p;
-                int playersAlive = 0;
                 if (p.isAlive()) {
                     playersAlive++;
                     int newPosition = p.getPosition() + rollDice();
+                    System.out.println("Bap: " + board);
+                    System.out.println("Bap: " + board.getTiles());
                     if (newPosition > board.getTiles().size()) {
                         // user passed GO! - give money!
                         p.setMoney(p.getMoney() + 100);
@@ -75,4 +76,7 @@ public class Game {
                 ", currentPlayer=" + currentPlayer +
                 '}';
     }
+	protected void setBoard(Board board) {
+		this.board = board;
+	}
 }

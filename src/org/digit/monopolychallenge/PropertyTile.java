@@ -30,7 +30,7 @@ public class PropertyTile extends Tile {
 		return name;
 	}
 	public int getRent() {
-		return houseRents[houseLevel-1];
+		return houseRents[houseLevel];
 	}
 	public int getPrice() {
 		return propertyPrice;
